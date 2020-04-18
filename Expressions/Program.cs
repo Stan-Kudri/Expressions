@@ -8,6 +8,11 @@ namespace Expressions
 {
     class Program
     {
+        public static void Print(Expressions expressions)
+        {
+            Console.WriteLine($"{expressions.ToString()} = {expressions.Eval()}");
+        }
+
         static void Main(string[] args)
         {
             var variableLht = new ConstantExpression(12);
@@ -16,7 +21,8 @@ namespace Expressions
             var add = new AddExpression(variableLht, variableRgt);
 
             var div = new DivExpression(add, variableRgt);
-
+                        
+            Print(div);
 
             Console.Read();
         }

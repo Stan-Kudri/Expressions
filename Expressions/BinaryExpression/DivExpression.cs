@@ -18,7 +18,7 @@ namespace Expressions
 
         public new Expressions Clone()
         {
-            return this;
+            return new DivExpression(Left,Right);
         }
 
         public override double Eval()
@@ -28,5 +28,9 @@ namespace Expressions
             return lft / rgt;
         }
 
+        public override string ToString()
+        {
+            return $"({Left}/{Right})";
+        }
     }
 }
