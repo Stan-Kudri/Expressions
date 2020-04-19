@@ -21,8 +21,10 @@ namespace Expressions
             var add = new AddExpression(variableLht, variableRgt);
 
             var div = new DivExpression(add, variableRgt);
-                        
-            Print(div);
+
+            var axa = (Expressions) div.Clone();
+
+            Print(axa);
 
             Console.Read();
         }

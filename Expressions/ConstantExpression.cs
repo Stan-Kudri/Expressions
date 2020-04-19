@@ -15,9 +15,9 @@ namespace Expressions
             Value = value;
         }
 
-        public new Expressions Clone()
+        public override object Clone()
         {
-            return this;
+            return new ConstantExpression(this.Value);
         }
 
         public override string ToString()

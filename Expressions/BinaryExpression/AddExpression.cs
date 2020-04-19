@@ -16,9 +16,9 @@ namespace Expressions
             Right = right;
         }
 
-        public new Expressions Clone()
+        public override sealed Object Clone()
         {
-            return new AddExpression(Left,Right);
+            return new AddExpression(this.Left,this.Right);
         }
         
         public override double Eval()
