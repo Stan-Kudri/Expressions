@@ -22,8 +22,8 @@ namespace Expressions
 
             var div = new DivExpression(add, variableRgt);
 
-            var axa = (Expressions) div.Clone();
-
+            var axa =  div.Clone();
+            Print(div);
             Print(axa);
 
             Console.Read();

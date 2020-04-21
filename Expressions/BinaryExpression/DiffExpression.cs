@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Expressions
 {
-    class DiffExpression:Expressions
+    sealed class DiffExpression:Expressions
     {
         private Expressions Left, Right;
 
@@ -16,9 +16,11 @@ namespace Expressions
             Right = right;
         }
 
-        public override sealed Object Clone()
+        public override Expressions Clone()
         {
-            return new DiffExpression(this.Left,this.Right);
+            var left = this.Left.Clone();
+            var right = this.Right.Clone();
+            return new DiffExpression(left,right);
         }
 
         public override double Eval()

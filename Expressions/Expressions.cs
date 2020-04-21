@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Expressions
 {
-    abstract class Expressions:ICloneable
+    abstract class Expressions
     {
         public abstract double Eval();
 
-        public virtual object Clone()
+        public virtual Expressions Clone()
         {
             return this;
         }
